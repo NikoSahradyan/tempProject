@@ -10,6 +10,8 @@
 
 @interface ThirdCell : ASCellNode
 
--(instancetype)initWithurlArray:(NSArray<NSURL *> *)urlArr subtext:(NSString *)textOne button:(NSString *)hashTag;
+- (instancetype)initWithurlArray:(NSArray<NSURL *> *)urlArr subtext:(NSString *)textOne button:(NSString *)hashTag;
+
+- (instancetype)initWithurlArray:(NSArray<NSURL *> *)urlArr title:(NSString *)title itemDescription:(NSString *)itemDescription salePrice:(NSString *)salePrice oldPrice:(NSString *)oldPrice;
 
 @end

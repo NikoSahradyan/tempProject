@@ -10,4 +10,7 @@
 
 @interface LocalTrendsComplexCell : ASCellNode
 
+- (instancetype)initAsBundle:(NSString *)saleTitle;
+- (instancetype)init;
+
 @end

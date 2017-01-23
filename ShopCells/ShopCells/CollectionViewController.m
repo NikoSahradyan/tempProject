@@ -77,6 +77,11 @@
             LocalTrendsComplexCell *cell = [[LocalTrendsComplexCell alloc] init];
             return cell;
         };
+    } if (indexPath.section == 4) {
+        return ^ {
+            LocalTrendsComplexCell *cell = [[LocalTrendsComplexCell alloc] initAsBundle:@"Buy a package bundle and save up to $2.00"];
+            return cell;
+        };
     } else {
         return ^ {
             MostUsed *cell = [[MostUsed alloc] initWithUrl:url title:@"Coffeholic" info:@"16 stickers"];
@@ -85,12 +90,14 @@
     }
 }
 - (ASSizeRange)collectionNode:(ASCollectionNode *)collectionNode constrainedSizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0 || indexPath.section == 2) {
+    if (indexPath.section == 0 || indexPath.section == 2 ) {
         return ASSizeRangeMake(CGSizeMake(self.collectionNode.frame.size.width, 0), CGSizeMake(self.collectionNode.frame.size.width,240));
     } else if (indexPath.section == 1) {
         return ASSizeRangeMake(CGSizeMake(self.collectionNode.frame.size.width, 0), CGSizeMake(self.collectionNode.frame.size.width,172));
     } else if (indexPath.section == 3) {
         return ASSizeRangeMake(CGSizeMake(self.collectionNode.frame.size.width, 0), CGSizeMake(self.collectionNode.frame.size.width,238));
+    } else if (indexPath.section == 4) {
+        return ASSizeRangeMake(CGSizeMake(self.collectionNode.frame.size.width, 0), CGSizeMake(self.collectionNode.frame.size.width,260));
     } else {
         return ASSizeRangeMake(CGSizeMake(self.mostUsedWidth, 0), CGSizeMake(self.mostUsedWidth, 300));
     }
@@ -101,7 +108,7 @@
 //http://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (section == 0 || section == 1 || section == 2 || section == 3) {
+    if (section == 0 || section == 1 || section == 2 || section == 3 || section == 4) {
         return 1;
     } else {
         return 50;
@@ -118,13 +125,15 @@
         return [[SectionHeader alloc] initWithTitle:@"Trending Now"];
     } else if (indexPath.section == 3 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
         return [[SectionHeader alloc] initWithTitle:@"Local Trends"];
+    } else if (indexPath.section == 4 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        return [[SectionHeader alloc] initWithTitle:@"Bundles"];
     } else {
         return [[SectionHeader alloc] initWithTitle:@""];
     }
 }
 
 - (NSInteger)numberOfSectionsInCollectionNode:(ASCollectionNode *)collectionNode {
-    return 5;
+    return 6;
 }
 
 - (void)didReceiveMemoryWarning {
