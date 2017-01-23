@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B09C5051E361CC2003A3B43 /* FreeComplexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B09C5041E361CC2003A3B43 /* FreeComplexCell.m */; };
+		8B09C5081E362077003A3B43 /* LocalTrendsComplexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B09C5071E362077003A3B43 /* LocalTrendsComplexCell.m */; };
+		8B09C50B1E362200003A3B43 /* TrendingNow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B09C50A1E362200003A3B43 /* TrendingNow.m */; };
 		8B2D68061E34A07D00473E95 /* FeaturedComplexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2D68051E34A07D00473E95 /* FeaturedComplexCell.m */; };
 		8B2D68091E34B8C000473E95 /* SectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2D68081E34B8C000473E95 /* SectionHeader.m */; };
 		8BAF364B1E31F8E0004E90CE /* SecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAF364A1E31F8E0004E90CE /* SecondCell.m */; };
@@ -26,6 +29,12 @@
 
 /* Begin PBXFileReference section */
 		0573555A823D18242D00D79D /* libPods-ShopCells.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShopCells.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B09C5031E361CC2003A3B43 /* FreeComplexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeComplexCell.h; sourceTree = "<group>"; };
+		8B09C5041E361CC2003A3B43 /* FreeComplexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeComplexCell.m; sourceTree = "<group>"; };
+		8B09C5061E362077003A3B43 /* LocalTrendsComplexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalTrendsComplexCell.h; sourceTree = "<group>"; };
+		8B09C5071E362077003A3B43 /* LocalTrendsComplexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalTrendsComplexCell.m; sourceTree = "<group>"; };
+		8B09C5091E362200003A3B43 /* TrendingNow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendingNow.h; sourceTree = "<group>"; };
+		8B09C50A1E362200003A3B43 /* TrendingNow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendingNow.m; sourceTree = "<group>"; };
 		8B2D68041E34A07D00473E95 /* FeaturedComplexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedComplexCell.h; sourceTree = "<group>"; };
 		8B2D68051E34A07D00473E95 /* FeaturedComplexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedComplexCell.m; sourceTree = "<group>"; };
 		8B2D68071E34B8C000473E95 /* SectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeader.h; sourceTree = "<group>"; };
@@ -76,6 +85,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8B09C5021E361C73003A3B43 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8BBC65EF1E30B2D900851926 /* FirstCell.h */,
+				8BBC65F01E30B2D900851926 /* FirstCell.m */,
+				8BAF36491E31F8E0004E90CE /* SecondCell.h */,
+				8BAF364A1E31F8E0004E90CE /* SecondCell.m */,
+				8BAF364C1E322325004E90CE /* ThirdCell.h */,
+				8BAF364D1E322325004E90CE /* ThirdCell.m */,
+				8BAF36551E3237C7004E90CE /* MostUsed.h */,
+				8BAF36561E3237C7004E90CE /* MostUsed.m */,
+				8B2D68041E34A07D00473E95 /* FeaturedComplexCell.h */,
+				8B2D68051E34A07D00473E95 /* FeaturedComplexCell.m */,
+				8B09C5031E361CC2003A3B43 /* FreeComplexCell.h */,
+				8B09C5041E361CC2003A3B43 /* FreeComplexCell.m */,
+				8B09C5061E362077003A3B43 /* LocalTrendsComplexCell.h */,
+				8B09C5071E362077003A3B43 /* LocalTrendsComplexCell.m */,
+				8B09C5091E362200003A3B43 /* TrendingNow.h */,
+				8B09C50A1E362200003A3B43 /* TrendingNow.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		8BBC65C91E30A62F00851926 = {
 			isa = PBXGroup;
 			children = (
@@ -108,18 +140,9 @@
 				8BBC65D51E30A62F00851926 /* Supporting Files */,
 				8BBC65EC1E30A7F900851926 /* CollectionViewController.h */,
 				8BBC65ED1E30A7F900851926 /* CollectionViewController.m */,
-				8BBC65EF1E30B2D900851926 /* FirstCell.h */,
-				8BBC65F01E30B2D900851926 /* FirstCell.m */,
-				8BAF36491E31F8E0004E90CE /* SecondCell.h */,
-				8BAF364A1E31F8E0004E90CE /* SecondCell.m */,
-				8BAF364C1E322325004E90CE /* ThirdCell.h */,
-				8BAF364D1E322325004E90CE /* ThirdCell.m */,
+				8B09C5021E361C73003A3B43 /* Cells */,
 				8BAF36521E32244A004E90CE /* MultiImage.h */,
 				8BAF36531E32244A004E90CE /* MultiImage.m */,
-				8BAF36551E3237C7004E90CE /* MostUsed.h */,
-				8BAF36561E3237C7004E90CE /* MostUsed.m */,
-				8B2D68041E34A07D00473E95 /* FeaturedComplexCell.h */,
-				8B2D68051E34A07D00473E95 /* FeaturedComplexCell.m */,
 				8B2D68071E34B8C000473E95 /* SectionHeader.h */,
 				8B2D68081E34B8C000473E95 /* SectionHeader.m */,
 			);
@@ -268,15 +291,18 @@
 			files = (
 				8BBC65EE1E30A7F900851926 /* CollectionViewController.m in Sources */,
 				8BBC65DD1E30A62F00851926 /* ViewController.m in Sources */,
+				8B09C5051E361CC2003A3B43 /* FreeComplexCell.m in Sources */,
 				8B2D68061E34A07D00473E95 /* FeaturedComplexCell.m in Sources */,
 				8B2D68091E34B8C000473E95 /* SectionHeader.m in Sources */,
 				8BAF36571E3237C7004E90CE /* MostUsed.m in Sources */,
+				8B09C5081E362077003A3B43 /* LocalTrendsComplexCell.m in Sources */,
 				8BBC65F11E30B2D900851926 /* FirstCell.m in Sources */,
 				8BBC65DA1E30A62F00851926 /* AppDelegate.m in Sources */,
 				8BBC65D71E30A62F00851926 /* main.m in Sources */,
 				8BAF36541E32244A004E90CE /* MultiImage.m in Sources */,
 				8BAF364B1E31F8E0004E90CE /* SecondCell.m in Sources */,
 				8BAF364E1E322325004E90CE /* ThirdCell.m in Sources */,
+				8B09C50B1E362200003A3B43 /* TrendingNow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

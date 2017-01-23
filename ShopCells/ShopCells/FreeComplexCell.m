@@ -1,21 +1,21 @@
 //
-//  FeaturedComplexCell.m
+//  FreeComplexCell.m
 //  ShopCells
 //
-//  Created by Developer on 22/01/2017.
+//  Created by Developer on 23/01/2017.
 //  Copyright © 2017 Nsystems. All rights reserved.
 //
 
-#import "FeaturedComplexCell.h"
-#import "FirstCell.h"
+#import "FreeComplexCell.h"
+#import "SecondCell.h"
 
-@interface FeaturedComplexCell()<ASPagerDelegate, ASPagerDataSource>
+@interface FreeComplexCell()<ASPagerDelegate, ASPagerDataSource>
 
 @property (nonatomic) ASPagerNode *pagerNode;
 
 @end
 
-@implementation FeaturedComplexCell
+@implementation FreeComplexCell
 
 - (instancetype)init {
     self = [super init];
@@ -48,14 +48,14 @@
 - (ASCellNodeBlock)pagerNode:(ASPagerNode *)pagerNode nodeBlockAtIndex:(NSInteger)index {
     NSURL *url = [NSURL URLWithString:@"http://cdn2.hubspot.net/hub/53/file-2263493423-jpeg/simple.jpeg"];
     return ^ {
-//        FirstCell *cell = [[FirstCell alloc] initWithURL:url textOne:@"TEXT ONE" textTwo:@"TEXT TWO"];
-        FirstCell *cell = [[FirstCell alloc] initWithURL:url hashTag:@"#hashTag" packagesCount:@"8 packages"];
+        SecondCell *cell = [[SecondCell alloc] initWithURL:url title:@"Very long Title of package"];
         return cell;
     };
 }
 
 - (ASSizeRange)pagerNode:(ASPagerNode *)pagerNode constrainedSizeForNodeAtIndex:(NSInteger)index {
-    return ASSizeRangeMake(CGSizeMake(260,0), CGSizeMake(260,240));
+    return ASSizeRangeMake(CGSizeMake(122,0), CGSizeMake(122,172));
 }
 
 @end
+
