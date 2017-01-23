@@ -7,6 +7,6 @@ target 'ShopCells' do
 
   # Pods for ShopCells
 
-pod 'AsyncDisplayKit', '2.0'
+pod 'AsyncDisplayKit', ‘2.0.1’
 
 end

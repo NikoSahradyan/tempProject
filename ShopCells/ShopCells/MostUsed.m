@@ -31,7 +31,11 @@
         _info.attributedText = [[NSAttributedString alloc] initWithString:info attributes:@{}];
         
         _mainButton = [[ASButtonNode alloc] init];
-        [_mainButton setTitle:@"FREE" withFont:[UIFont systemFontOfSize:14] withColor:[UIColor redColor] forState:ASControlStateNormal];
+        [_mainButton setTitle:@"$1.99" withFont:[UIFont systemFontOfSize:14] withColor:[UIColor colorWithRed:1 green:0.40 blue:0.6 alpha:1] forState:ASControlStateNormal];
+        [_mainButton setBorderWidth:2];
+        _mainButton.cornerRadius = 5;
+        [_mainButton setBorderColor:[[UIColor colorWithRed:1 green:0.40 blue:0.6 alpha:1] CGColor]];
+        [_mainButton setContentEdgeInsets:UIEdgeInsetsMake(4, 8, 4, 8)];
         
         self.automaticallyManagesSubnodes = YES;
         
