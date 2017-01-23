@@ -13,6 +13,9 @@
 #import "MostUsed.h"
 #import "FeaturedComplexCell.h"
 #import "SectionHeader.h"
+#import "FreeComplexCell.h"
+#import "LocalTrendsComplexCell.h"
+#import "TrendingNow.h"
 
 @interface CollectionViewController () <ASCollectionDelegate, ASCollectionDataSource>
 
@@ -59,14 +62,19 @@
             FeaturedComplexCell *cell = [[FeaturedComplexCell alloc] init];
             return cell;
         };
-    } else if (indexPath.row == 0) {
+    } else if (indexPath.section == 1) {
         return ^{
-            SecondCell *cell = [[SecondCell alloc] initWithURL:url title:@"Very long Title of package"];
+            FreeComplexCell *cell = [[FreeComplexCell alloc] init];
             return cell;
         };
-    } else if (indexPath.row == 1) {
+    } else if (indexPath.section == 2) {
         return ^ {
-            ThirdCell *cell = [[ThirdCell alloc] initWithurlArray:@[url,url,url,url] subtext:@"some Text" button:@"awesome"];
+            TrendingNow *cell = [[TrendingNow alloc] init];
+            return cell;
+        };
+    } else if (indexPath.section == 3) {
+        return ^ {
+            LocalTrendsComplexCell *cell = [[LocalTrendsComplexCell alloc] init];
             return cell;
         };
     } else {
@@ -77,12 +85,12 @@
     }
 }
 - (ASSizeRange)collectionNode:(ASCollectionNode *)collectionNode constrainedSizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        return ASSizeRangeMake(CGSizeMake(self.collectionNode.frame.size.width, 0), CGSizeMake(self.collectionNode.frame.size.width,300));
-    } else if (indexPath.row == 1) {
-        return ASSizeRangeMake(CGSizeMake(260,0), CGSizeMake(260,300));
-    } else if (indexPath.row == 0) {
-        return ASSizeRangeMake(CGSizeMake(122,0), CGSizeMake(122,300));
+    if (indexPath.section == 0 || indexPath.section == 2) {
+        return ASSizeRangeMake(CGSizeMake(self.collectionNode.frame.size.width, 0), CGSizeMake(self.collectionNode.frame.size.width,240));
+    } else if (indexPath.section == 1) {
+        return ASSizeRangeMake(CGSizeMake(self.collectionNode.frame.size.width, 0), CGSizeMake(self.collectionNode.frame.size.width,172));
+    } else if (indexPath.section == 3) {
+        return ASSizeRangeMake(CGSizeMake(self.collectionNode.frame.size.width, 0), CGSizeMake(self.collectionNode.frame.size.width,238));
     } else {
         return ASSizeRangeMake(CGSizeMake(self.mostUsedWidth, 0), CGSizeMake(self.mostUsedWidth, 300));
     }
@@ -93,7 +101,7 @@
 //http://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (section == 0) {
+    if (section == 0 || section == 1 || section == 2 || section == 3) {
         return 1;
     } else {
         return 50;
@@ -102,13 +110,21 @@
 }
 
 - (ASCellNode *)collectionNode:(ASCollectionNode *)collectionNode nodeForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0 && [kind isEqualToString:UICollectionElementKindSectionHeader])
+    if (indexPath.section == 0 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
         return [[SectionHeader alloc] initWithTitle:@"Featured"];
-    else return [[SectionHeader alloc] initWithTitle:@""];
+    } else if (indexPath.section == 1 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        return [[SectionHeader alloc] initWithTitle:@"Free"];
+    } else if (indexPath.section == 2 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        return [[SectionHeader alloc] initWithTitle:@"Trending Now"];
+    } else if (indexPath.section == 3 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        return [[SectionHeader alloc] initWithTitle:@"Local Trends"];
+    } else {
+        return [[SectionHeader alloc] initWithTitle:@""];
+    }
 }
 
 - (NSInteger)numberOfSectionsInCollectionNode:(ASCollectionNode *)collectionNode {
-    return 2;
+    return 5;
 }
 
 - (void)didReceiveMemoryWarning {

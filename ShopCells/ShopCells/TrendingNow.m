@@ -1,21 +1,21 @@
 //
-//  FeaturedComplexCell.m
+//  TrendingNow.m
 //  ShopCells
 //
-//  Created by Developer on 22/01/2017.
+//  Created by Developer on 23/01/2017.
 //  Copyright © 2017 Nsystems. All rights reserved.
 //
 
-#import "FeaturedComplexCell.h"
+#import "TrendingNow.h"
 #import "FirstCell.h"
 
-@interface FeaturedComplexCell()<ASPagerDelegate, ASPagerDataSource>
+@interface TrendingNow() <ASPagerDelegate, ASPagerDataSource>
 
 @property (nonatomic) ASPagerNode *pagerNode;
 
 @end
 
-@implementation FeaturedComplexCell
+@implementation TrendingNow
 
 - (instancetype)init {
     self = [super init];

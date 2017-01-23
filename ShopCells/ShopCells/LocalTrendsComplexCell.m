@@ -1,21 +1,21 @@
 //
-//  FeaturedComplexCell.m
+//  LocalTrendsComplexCell.m
 //  ShopCells
 //
-//  Created by Developer on 22/01/2017.
+//  Created by Developer on 23/01/2017.
 //  Copyright © 2017 Nsystems. All rights reserved.
 //
 
-#import "FeaturedComplexCell.h"
-#import "FirstCell.h"
+#import "LocalTrendsComplexCell.h"
+#import "ThirdCell.h"
 
-@interface FeaturedComplexCell()<ASPagerDelegate, ASPagerDataSource>
+@interface LocalTrendsComplexCell() <ASPagerDataSource, ASPagerDelegate>
 
 @property (nonatomic) ASPagerNode *pagerNode;
 
 @end
 
-@implementation FeaturedComplexCell
+@implementation LocalTrendsComplexCell
 
 - (instancetype)init {
     self = [super init];
@@ -48,13 +48,13 @@
 - (ASCellNodeBlock)pagerNode:(ASPagerNode *)pagerNode nodeBlockAtIndex:(NSInteger)index {
     NSURL *url = [NSURL URLWithString:@"http://cdn2.hubspot.net/hub/53/file-2263493423-jpeg/simple.jpeg"];
     return ^ {
-        FirstCell *cell = [[FirstCell alloc] initWithURL:url textOne:@"TEXT ONE" textTwo:@"TEXT TWO"];
+        ThirdCell *cell = [[ThirdCell alloc] initWithurlArray:@[url,url,url,url] subtext:@"some Text" button:@"awesome"];
         return cell;
     };
 }
 
 - (ASSizeRange)pagerNode:(ASPagerNode *)pagerNode constrainedSizeForNodeAtIndex:(NSInteger)index {
-    return ASSizeRangeMake(CGSizeMake(260,0), CGSizeMake(260,240));
+    return ASSizeRangeMake(CGSizeMake(260,0), CGSizeMake(260,238));
 }
 
 @end
