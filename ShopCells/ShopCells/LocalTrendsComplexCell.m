@@ -76,7 +76,7 @@
         
     } else {
         return ^ {
-            ThirdCell *cell = [[ThirdCell alloc] initWithurlArray:@[url,url,url,url] subtext:@"some Text" button:@"awesome"];
+            ThirdCell *cell = [[ThirdCell alloc] initWithurlArray:@[url,url,url,url] subtext:@"some Text" button:@"#awesome"];
             return cell;
         };
         

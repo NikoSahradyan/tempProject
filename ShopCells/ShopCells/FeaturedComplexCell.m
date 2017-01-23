@@ -48,8 +48,8 @@
 - (ASCellNodeBlock)pagerNode:(ASPagerNode *)pagerNode nodeBlockAtIndex:(NSInteger)index {
     NSURL *url = [NSURL URLWithString:@"http://cdn2.hubspot.net/hub/53/file-2263493423-jpeg/simple.jpeg"];
     return ^ {
-//        FirstCell *cell = [[FirstCell alloc] initWithURL:url textOne:@"TEXT ONE" textTwo:@"TEXT TWO"];
-        FirstCell *cell = [[FirstCell alloc] initWithURL:url hashTag:@"#hashTag" packagesCount:@"8 packages"];
+        FirstCell *cell = [[FirstCell alloc] initWithURL:url textOne:@"TEXT ONE" textTwo:@"TEXT TWO"];
+//        FirstCell *cell = [[FirstCell alloc] initWithURL:url hashTag:@"#hashTag" packagesCount:@"8 packages"];
         return cell;
     };
 }

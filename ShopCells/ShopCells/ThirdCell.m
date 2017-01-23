@@ -59,11 +59,12 @@
         _imageSet = [[MultiImage alloc] initWithImageArray:urlArr size:CGSizeMake(130, 90)];
         
         _itemDescrition = [[ASTextNode alloc] init];
-        _itemDescrition.attributedText = [[NSAttributedString alloc] initWithString:textOne attributes:@{}];
+        _itemDescrition.attributedText = [[NSAttributedString alloc] initWithString:textOne attributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:12], NSForegroundColorAttributeName: [UIColor grayColor]}];
         
         _hashtag = [[ASButtonNode alloc] init];
         [_hashtag setTitle:hashTag withFont:[UIFont boldSystemFontOfSize:14] withColor:[UIColor whiteColor] forState:ASControlStateNormal];
-        [_hashtag setBackgroundColor:[UIColor blueColor]];
+        [_hashtag setBackgroundColor:[UIColor colorWithRed:0.0 green:0.43 blue:077 alpha:1]];
+        _hashtag.cornerRadius = 6;
         _hashtag.style.height = ASDimensionMake(34);
         [_hashtag setContentEdgeInsets:UIEdgeInsetsMake(8, 8, 8, 8)];
         
@@ -95,7 +96,6 @@
         
         self.itemDescrition.style.spacingAfter = 12;
         [bottomSpec setChildren:@[hashtag, self.itemDescrition]];
-        
     }
     
     bottomSpec.style.flexGrow = YES;

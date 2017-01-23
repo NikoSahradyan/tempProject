@@ -73,15 +73,15 @@
 
 
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
-    ASStackLayoutSpec *textes = [ASStackLayoutSpec verticalStackLayoutSpec];
-    ASStackLayoutSpec *hashtag = [ASStackLayoutSpec horizontalStackLayoutSpec];
     ASStackLayoutSpec *textesButton = [ASStackLayoutSpec horizontalStackLayoutSpec];
-
+    
     if (!self.hashTag) {
+        ASStackLayoutSpec *textes = [ASStackLayoutSpec verticalStackLayoutSpec];
         [textes setChildren:@[_textOne, _textTwo]];
         textes.style.flexGrow = YES;
         [textesButton setChildren:@[textes,_button]];
     } else {
+        ASStackLayoutSpec *hashtag = [ASStackLayoutSpec horizontalStackLayoutSpec];
         [hashtag setChild:self.hashTag];
         hashtag.style.flexGrow = YES;
         [textesButton setChildren:@[hashtag,_packagesCount]];

@@ -20,7 +20,7 @@
     self = [super init];
     if (self) {
         _title = [[ASTextNode alloc] init];
-        _title.attributedText = [[NSAttributedString alloc] initWithString:title attributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:14]}];
+        _title.attributedText = [[NSAttributedString alloc] initWithString:title attributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:17], NSForegroundColorAttributeName: [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1]}];
         
         self.automaticallyManagesSubnodes = YES;
     }
@@ -30,6 +30,7 @@
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
     ASStackLayoutSpec *main = [ASStackLayoutSpec horizontalStackLayoutSpec];
     [main setChild:self.title];
+    
     return main;
 }
 
