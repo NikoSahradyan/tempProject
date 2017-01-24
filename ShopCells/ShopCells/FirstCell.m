@@ -23,21 +23,26 @@
 - (instancetype)initWithURL:(NSURL *)imageUrl textOne:(NSString *)textOne textTwo:(NSString *)textTwo {
     self = [super init];
     if (self) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.layer.cornerRadius = 5;
+        });
+        
+        
         _image = [[ASNetworkImageNode alloc] init];
         _image.style.preferredSize = CGSizeMake(260, 180);
         _image.URL = imageUrl;
         _image.backgroundColor = [UIColor grayColor];
         
         _textOne = [[ASTextNode alloc] init];
-        _textOne.attributedText = [[NSAttributedString alloc] initWithString:textOne attributes:@{}];
+        _textOne.attributedText = [[NSAttributedString alloc] initWithString:textOne attributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:14], NSForegroundColorAttributeName: [UIColor blackColor]}];
         
         _textTwo = [[ASTextNode alloc] init];
-        _textTwo.attributedText = [[NSAttributedString alloc] initWithString:textTwo attributes:@{}];
+        _textTwo.attributedText = [[NSAttributedString alloc] initWithString:textTwo attributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:10], NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
         
         _button = [[ASButtonNode alloc] init];
         [_button setTitle:@"$1.99" withFont:[UIFont boldSystemFontOfSize:14] withColor:[UIColor colorWithRed:1 green:0.40 blue:0.6 alpha:1] forState:ASControlStateNormal];
-        [_button setBorderWidth:2];
-        _button.cornerRadius = 5;
+        [_button setBorderWidth:1];
+        _button.cornerRadius = 4;
         [_button setBorderColor:[[UIColor colorWithRed:1 green:0.40 blue:0.6 alpha:1] CGColor]];
         [_button setContentEdgeInsets:UIEdgeInsetsMake(4, 8, 4, 8)];
         
@@ -52,6 +57,10 @@
 - (instancetype)initWithURL:(NSURL *)imageUrl hashTag:(NSString *)hashTag packagesCount:(NSString *)packagesCount {
     self = [super init];
     if (self) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.layer.cornerRadius = 5;
+        });
+        
         _image = [[ASNetworkImageNode alloc] init];
         _image.style.preferredSize = CGSizeMake(260, 180);
         _image.URL = imageUrl;
@@ -102,6 +111,7 @@
     ASStackLayoutSpec *main = [ASStackLayoutSpec verticalStackLayoutSpec];
     [main setChildren:@[_image, textesButtonLarge]];
     main.style.flexGrow = YES;
+    
     return main;
 
 }

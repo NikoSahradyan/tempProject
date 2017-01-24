@@ -40,11 +40,13 @@
         [_itemName setMaximumNumberOfLines:2];
         
         _salePriceButton = [[ASButtonNode alloc] init];
-        [_salePriceButton setBackgroundColor:[UIColor blueColor]];
+        [_salePriceButton setContentEdgeInsets:UIEdgeInsetsMake(4, 8, 4, 8)];
+        [_salePriceButton setBackgroundColor:[UIColor colorWithRed:0.0 green:0.76 blue:0.95 alpha:1]];
         [_salePriceButton setTitle:salePrice withFont:[UIFont systemFontOfSize:12] withColor:[UIColor whiteColor] forState:ASControlStateNormal];
+        _salePriceButton.cornerRadius = 6;
         
         _oldPrice = [[ASTextNode alloc] init];
-        _oldPrice.attributedText = [[NSAttributedString alloc] initWithString:oldPrice attributes:@{NSForegroundColorAttributeName : [UIColor redColor]}];
+        _oldPrice.attributedText = [[NSAttributedString alloc] initWithString:oldPrice attributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:1.0 green:0.26 blue:0.6 alpha:1], NSStrikethroughStyleAttributeName:@(NSUnderlineStyleSingle), NSStrikethroughColorAttributeName:[UIColor colorWithRed:1.0 green:0.26 blue:0.6 alpha:1]}];
         
         self.automaticallyManagesSubnodes = YES;
         

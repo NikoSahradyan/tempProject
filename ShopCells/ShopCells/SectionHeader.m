@@ -28,9 +28,14 @@
 }
 
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
-    ASStackLayoutSpec *main = [ASStackLayoutSpec horizontalStackLayoutSpec];
-    [main setChild:self.title];
+    ASStackLayoutSpec *subMain = [ASStackLayoutSpec horizontalStackLayoutSpec];
+    [subMain setChild:self.title];
+    self.title.style.spacingBefore = 18;
+    subMain.style.spacingBefore = 24;
     
+    ASStackLayoutSpec *main = [ASStackLayoutSpec verticalStackLayoutSpec];
+    [main setChild:subMain];
+        
     return main;
 }
 

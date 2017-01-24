@@ -43,7 +43,7 @@
 
 - (void)setupCollectionNode {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.headerReferenceSize = CGSizeMake(300, 20);
+    layout.headerReferenceSize = CGSizeMake(300, 53);
     self.collectionNode = [[ASCollectionNode alloc] initWithCollectionViewLayout:layout];
     [self.collectionNode registerSupplementaryNodeOfKind:UICollectionElementKindSectionHeader];
     self.collectionNode.frame =CGRectMake(20, 0, self.node.bounds.size.width - 40, self.node.bounds.size.height);// self.node.frame;
