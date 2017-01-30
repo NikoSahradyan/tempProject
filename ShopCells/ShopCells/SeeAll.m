@@ -35,35 +35,23 @@
 
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
 
+    ASStackLayoutSpec *horizontalCenter = [ASStackLayoutSpec verticalStackLayoutSpec];
+    [horizontalCenter setChildren:@[self.seeAll]];
+    horizontalCenter.style.flexGrow = YES;
+    horizontalCenter.alignItems = ASStackLayoutAlignItemsCenter;
+    
+    
+    ASStackLayoutSpec *verticalCenter = [ASStackLayoutSpec horizontalStackLayoutSpec];
+    [verticalCenter setChildren:@[horizontalCenter]];
+    verticalCenter.style.flexGrow = YES;
+    verticalCenter.alignItems = ASStackLayoutAlignItemsCenter;
+    
     ASStaticLayoutSpec *backgroundImageStaticSpec = [ASStaticLayoutSpec absoluteLayoutSpecWithSizing:ASAbsoluteLayoutSpecSizingSizeToFit children:@[self.imageSet]];
-    ASStackLayoutSpec *mm = [ASStackLayoutSpec verticalStackLayoutSpec];
-    [mm setChildren:@[self.seeAll]];
-    mm.style.flexGrow = YES;
-    mm.alignItems = ASStackLayoutAlignItemsCenter;
-    
-    
-    ASStackLayoutSpec *tt = [ASStackLayoutSpec horizontalStackLayoutSpec];
-    [tt setChildren:@[mm]];
-    tt.style.flexGrow = YES;
-    tt.alignItems = ASStackLayoutAlignItemsCenter;
-    
-    
-    
-    UIEdgeInsets insets = UIEdgeInsetsMake(65 , 65 , 45, 45);
-    //ASInsetLayoutSpec *textInsetSpec = [ASInsetLayoutSpec insetLayoutSpecWithInsets:insets child:self.seeAll];
     self.seeAll.style.alignSelf = ASStackLayoutAlignSelfCenter;
-    ASOverlayLayoutSpec *textOverlaySpec = [ASOverlayLayoutSpec overlayLayoutSpecWithChild:backgroundImageStaticSpec
-                                                                                   overlay:tt];
+    ASOverlayLayoutSpec *main = [ASOverlayLayoutSpec overlayLayoutSpecWithChild:backgroundImageStaticSpec
+                                                                        overlay:verticalCenter];
     
-    //self.seeAll.position = CGPointMake(constrainedSize.max.width/2, constrainedSize.max.height/2);
-    //ASStackLayoutSpec *main = [ASStackLayoutSpec verticalStackLayoutSpec];
-    
-    //[main setChildren:@[self.seeAll]];
-    //main.justifyContent = ASStackLayoutJustifyContentCenter;
-    
-    
-
-    return textOverlaySpec;
+    return main;
 }
 
 
