@@ -13,6 +13,9 @@
 
 @property (nonatomic) ASPagerNode *pagerNode;
 
+@property (nonatomic) ASTextNode *headerText;
+
+
 @end
 
 @implementation FeaturedComplexCell
@@ -27,6 +30,12 @@
         _pagerNode = [[ASPagerNode alloc] initWithCollectionViewLayout:layout];
         _pagerNode.delegate = self;
         _pagerNode.dataSource = self;
+        
+        _headerText = [[ASTextNode alloc] init];
+        _headerText.attributedText = [[NSAttributedString alloc] initWithString:@"headerText" attributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:17], NSForegroundColorAttributeName: [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1]}];
+        
+        self.automaticallyManagesSubnodes = YES;
+        
         [self addSubnode:_pagerNode];
         
     }
@@ -34,9 +43,23 @@
 }
 
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
+    ASStackLayoutSpec *header = [ASStackLayoutSpec horizontalStackLayoutSpec];
+    [header setChild:self.headerText];
+    header.style.spacingBefore = 24;
+    header.style.spacingAfter = 12;
+    
     self.pagerNode.style.flexGrow = YES;
-    ASStackLayoutSpec *main = [ASStackLayoutSpec horizontalStackLayoutSpec];
-    [main setChild:self.pagerNode];
+    ASStackLayoutSpec *body = [ASStackLayoutSpec horizontalStackLayoutSpec];
+    [body setChild:self.pagerNode];
+    
+//    ASStackLayoutSpec *subMain = [ASStackLayoutSpec horizontalStackLayoutSpec];
+//    [subMain setChild:self.title];
+//    self.title.style.spacingBefore = 18;
+//    subMain.style.spacingBefore = 24;
+    
+    ASStackLayoutSpec *main = [ASStackLayoutSpec verticalStackLayoutSpec];
+    [main setChildren:@[header, body]];
+//    header.style.spacingAfter = 100;
     return main;
 }
 

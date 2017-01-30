@@ -38,6 +38,7 @@
 
 - (void)viewDidLoad {
     [self setupCollectionNode];
+    ((UICollectionViewFlowLayout *)[self.collectionNode.view collectionViewLayout]).headerReferenceSize = CGSizeMake(0, 0);
     self.mostUsedWidth = (self.collectionNode.frame.size.width - 20) / 2;
 }
 
@@ -117,19 +118,20 @@
 }
 
 - (ASCellNode *)collectionNode:(ASCollectionNode *)collectionNode nodeForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        return [[SectionHeader alloc] initWithTitle:@"Featured"];
-    } else if (indexPath.section == 1 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        return [[SectionHeader alloc] initWithTitle:@"Free"];
-    } else if (indexPath.section == 2 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        return [[SectionHeader alloc] initWithTitle:@"Trending Now"];
-    } else if (indexPath.section == 3 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        return [[SectionHeader alloc] initWithTitle:@"Local Trends"];
-    } else if (indexPath.section == 4 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        return [[SectionHeader alloc] initWithTitle:@"Bundles"];
-    } else {
-        return [[SectionHeader alloc] initWithTitle:@""];
-    }
+//    if (indexPath.section == 0 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
+//        return [[SectionHeader alloc] initWithTitle:@"Featured"];
+//    } else if (indexPath.section == 1 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
+//        return [[SectionHeader alloc] initWithTitle:@"Free"];
+//    } else if (indexPath.section == 2 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
+//        return [[SectionHeader alloc] initWithTitle:@"Trending Now"];
+//    } else if (indexPath.section == 3 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
+//        return [[SectionHeader alloc] initWithTitle:@"Local Trends"];
+//    } else if (indexPath.section == 4 && [kind isEqualToString:UICollectionElementKindSectionHeader]) {
+//        return [[SectionHeader alloc] initWithTitle:@"Bundles"];
+//    } else {
+//        return [[SectionHeader alloc] initWithTitle:@""];
+//    }
+    return [[SectionHeader alloc] initWithTitle:@""];
 }
 
 - (NSInteger)numberOfSectionsInCollectionNode:(ASCollectionNode *)collectionNode {

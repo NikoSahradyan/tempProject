@@ -8,6 +8,7 @@
 
 #import "LocalTrendsComplexCell.h"
 #import "ThirdCell.h"
+#import "SeeAll.h"
 
 @interface LocalTrendsComplexCell() <ASPagerDataSource, ASPagerDelegate>
 
@@ -76,7 +77,7 @@
         
     } else {
         return ^ {
-            ThirdCell *cell = [[ThirdCell alloc] initWithurlArray:@[url,url,url,url] subtext:@"some Text" button:@"#awesome"];
+            SeeAll *cell = [[SeeAll alloc] initWithurlArray:@[url,url,url,url] subtext:@"some Text" button:@"#awesome"];
             return cell;
         };
         

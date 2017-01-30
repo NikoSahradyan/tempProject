@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2741BB811E3F5CC6007C2FAE /* SeeAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741BB801E3F5CC6007C2FAE /* SeeAll.m */; };
 		8B09C5051E361CC2003A3B43 /* FreeComplexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B09C5041E361CC2003A3B43 /* FreeComplexCell.m */; };
 		8B09C5081E362077003A3B43 /* LocalTrendsComplexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B09C5071E362077003A3B43 /* LocalTrendsComplexCell.m */; };
 		8B09C50B1E362200003A3B43 /* TrendingNow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B09C50A1E362200003A3B43 /* TrendingNow.m */; };
@@ -29,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		0573555A823D18242D00D79D /* libPods-ShopCells.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShopCells.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2741BB7F1E3F5CC6007C2FAE /* SeeAll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeAll.h; sourceTree = "<group>"; };
+		2741BB801E3F5CC6007C2FAE /* SeeAll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeAll.m; sourceTree = "<group>"; };
 		8B09C5031E361CC2003A3B43 /* FreeComplexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeComplexCell.h; sourceTree = "<group>"; };
 		8B09C5041E361CC2003A3B43 /* FreeComplexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeComplexCell.m; sourceTree = "<group>"; };
 		8B09C5061E362077003A3B43 /* LocalTrendsComplexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalTrendsComplexCell.h; sourceTree = "<group>"; };
@@ -104,6 +107,8 @@
 				8B09C5071E362077003A3B43 /* LocalTrendsComplexCell.m */,
 				8B09C5091E362200003A3B43 /* TrendingNow.h */,
 				8B09C50A1E362200003A3B43 /* TrendingNow.m */,
+				2741BB7F1E3F5CC6007C2FAE /* SeeAll.h */,
+				2741BB801E3F5CC6007C2FAE /* SeeAll.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				8BAF36571E3237C7004E90CE /* MostUsed.m in Sources */,
 				8B09C5081E362077003A3B43 /* LocalTrendsComplexCell.m in Sources */,
 				8BBC65F11E30B2D900851926 /* FirstCell.m in Sources */,
+				2741BB811E3F5CC6007C2FAE /* SeeAll.m in Sources */,
 				8BBC65DA1E30A62F00851926 /* AppDelegate.m in Sources */,
 				8BBC65D71E30A62F00851926 /* main.m in Sources */,
 				8BAF36541E32244A004E90CE /* MultiImage.m in Sources */,

@@ -50,7 +50,6 @@
         
         self.automaticallyManagesSubnodes = YES;
         
-        
     }
     return self;
 }
