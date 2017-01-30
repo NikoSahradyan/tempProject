@@ -12,7 +12,7 @@
 @interface SeeAll ()
 
 @property (nonatomic) MultiImage *imageSet;
-@property (nonatomic) ASTextNode *seeAll;
+@property (nonatomic) ASButtonNode *seeAll;
 
 
 
@@ -25,9 +25,8 @@
     if (self) {
         _imageSet = [[MultiImage alloc] initWithImageArray:urlArr size:CGSizeMake(130, 90)];
         
-        _seeAll = [[ASTextNode alloc] init];
-        _seeAll.attributedText = [[NSAttributedString alloc] initWithString:@"See All" attributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:12], NSForegroundColorAttributeName: [UIColor blackColor]}];
-        
+        _seeAll = [[ASButtonNode alloc] init];
+        [_seeAll setTitle:@"$1.99" withFont:[UIFont systemFontOfSize:14] withColor:[UIColor colorWithRed:1 green:0.40 blue:0.6 alpha:1] forState:ASControlStateNormal];
         self.automaticallyManagesSubnodes = YES;
     }
     return self;
@@ -35,21 +34,16 @@
 
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
 
-    ASStackLayoutSpec *horizontalCenter = [ASStackLayoutSpec verticalStackLayoutSpec];
-    [horizontalCenter setChildren:@[self.seeAll]];
-    horizontalCenter.style.flexGrow = YES;
-    horizontalCenter.alignItems = ASStackLayoutAlignItemsCenter;
     
+    self.seeAll.contentVerticalAlignment = ASVerticalAlignmentCenter;
+    self.seeAll.contentHorizontalAlignment = ASHorizontalAlignmentMiddle;
+
     
-    ASStackLayoutSpec *verticalCenter = [ASStackLayoutSpec horizontalStackLayoutSpec];
-    [verticalCenter setChildren:@[horizontalCenter]];
-    verticalCenter.style.flexGrow = YES;
-    verticalCenter.alignItems = ASStackLayoutAlignItemsCenter;
     
     ASStaticLayoutSpec *backgroundImageStaticSpec = [ASStaticLayoutSpec absoluteLayoutSpecWithSizing:ASAbsoluteLayoutSpecSizingSizeToFit children:@[self.imageSet]];
     self.seeAll.style.alignSelf = ASStackLayoutAlignSelfCenter;
     ASOverlayLayoutSpec *main = [ASOverlayLayoutSpec overlayLayoutSpecWithChild:backgroundImageStaticSpec
-                                                                        overlay:verticalCenter];
+                                                                        overlay:self.seeAll];
     
     return main;
 }
